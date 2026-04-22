@@ -1,0 +1,162 @@
+/*Didier Hirwantwari
+This probram takes a number from the keyboard and reports whether it is odd or even
+5/03/2022*/
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, remainder;
+
+    std::cout << "Get an number and press Enter: " << std::endl;
+    std::cin >> n;
+
+
+    // Get a remainder after dividing by 2
+    //Can remove remainder to make code more efficient
+    //remainder = n % 2;
+
+    // If remainder is 0, the number input is even
+    //change if(remainder == 0) to if(n % 2 == 0)
+    //if (remainder == 0)
+    if(n % 2 == 0)
+        std::cout << "The number is even. " << endl;
+    else
+        std::cout << remainder << ": This is the remainder which => number is odd" << std::endl;
+
+    return 0;
+
+}
+
+
+
+
+/*Write a program that reports whether a number input is divisible by
+7.(Hint: If a number is divisible by 7,that means you can divide it by 7
+   and get a remainder of 0
+   Didier Hirwantwari
+   5/03/2022
+   */
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //Declare input variable and remainder
+    int n; //remainder;
+
+    //Ask user for input
+    std::cout << "We are going to test if a number is divisible by 7: " << std::endl;
+    std::cout << "Enter a number: " ;
+
+    //Store the number into n
+    std::cin >> n;
+
+    if ( n % 7 == 0)
+        std::cout << "The number entered is: " << n << " and it IS divisible by 7. " << std::endl;
+    else
+        std::cout << "The number entered is: " << n << " and it IS NOT divisible by 7. " << std::endl;
+
+
+    return 0;
+
+
+}
+
+
+
+
+
+/*Alter the while loop example so that it prints only even numbers, as in 0, 2,
+4, 6. Hint one of the ways to check if number is even is to check if a number
+divided by 2 yields a remainder or 0.*/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+           //declare the necessary variables:
+    int n1, n2;
+
+    //prompt user to enter the first number and second number:
+    std::cout << "Welcome to the only even numbers loop game !!" << std::endl ;
+    std::cout << "Please Enter two numbers where numb 1 is the beginning" << std::endl <<
+                  "  of your loop and numb 2 is the end of your loop!!" << std::endl;
+
+    //user enters numbers
+    std::cin >> n1 >> n2;               //did not know that this was legal in c++ could have had
+                                        //two lines as such:
+                                        //std::cin >> n1;
+                                        //std::cin >> n2;
+
+    //Beginning Program
+    while (n1 <= n2)                        //while n1 is less than or equal to n2
+    {
+        if (n1%2 == 0)
+          std::cout << n1 << " ";         //print n1 if it meets the condition
+
+        n1 += 1;                        //wrong to increase the counter here.
+                                            //what this does is user enters the first number and the last number and then the computer only returns
+                                            //a number if either of those inputs is even i.e. user enters 2 and 4, computer only returns 2 and a bevy of other wrong
+                                            //results
+
+
+           //n1 += 1;                       //add 1 to n1
+                                          //believe this has to be outside the if statement
+
+    }
+
+    return 0;
+}
+
+
+
+/*This program tests if a number is prime using the relational conditions
+we have learned about such as <=, %, etc...*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+   int n;                   //Number to test for prime-ness
+   int i;                   //Loop counter
+   int is_prime;            //Boolean flag
+                            //Assume true for now
+
+//get a number from the keyboard
+
+std::cout << "Enter a number and press ENTER: ";
+std::cin >> n;
+
+//Test for prime by checking for divisibility
+//by all whole numbers from 2 to sqrt(n)
+
+i = 2;
+while (i <= sqrt(n))        //while i is <= sqrt(n)
+{
+    if(n % i == 0)          //if i divides n,
+        is_prime = false;   //n is not prime
+    i++;                    //add 1 to i;
+
+}
+
+//print results
+if (is_prime)
+    std::cout << "Number is prime. " << std::endl;
+else
+    std::cout << "NUmber is not prime. " << std::endl;
+
+
+
+return 0;
+}
+
+
