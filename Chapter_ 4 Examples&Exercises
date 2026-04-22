@@ -1,0 +1,59 @@
+/*Didier
+Jul 14, 2022
+This is code that outlines a simple function call in teh
+context of a complete program. It demostrates all three steps
+1 Declare
+2 Define
+3 Call
+
+We have added another function that will call the avg function
+Hence function call a function
+
+*/
+
+#include <iostream>
+
+using namespace std;
+
+//Function must be declared before being used.
+void print_Results(double a, double b);
+double avg(double x, double y);
+
+
+
+int main()
+{
+
+    double a = 0.0;
+    double b = 0.0;
+
+    std::cout << "Enter first number and press ENTER: ";
+    std::cin >> a;
+    std::cout << "Enter second number and press ENTER: ";
+    std::cin>> b;
+
+    //Call the function avg();
+   // std::cout << "Average is: " << avg(a, b) << std::endl ;
+
+   //Call the function print_results();
+   print_Results(a, b);
+
+    return 0;
+
+}
+
+
+//Print_results() function definition
+//
+void print_Results(double a, double b)
+{
+    std::cout << "Average is: " << avg( a,  b); //notice here used the variables a and b and not x and y since they were not declared here and they werent global
+                                                            //also, this is where we are using the prior avg function;
+}
+
+//Average Number function DEFINITION
+//
+double avg(double x, double y)
+{
+    return (x + y)/2;
+}
