@@ -1,0 +1,147 @@
+/*
+Didier Hirwantwari
+ 6/30/2022
+ Print 1 to N using a for loop
+ Exercise 3.1.2 Chap 3
+ Rewrite the example so that it prints all the numbers form n to 1 in
+ reverse order. For example, the user enters 4, and the program prints 54321.
+ (Hint: In the for loop, initialize i to n, use the condition i >= 1, and subtract 1
+  from i in the incrememnt step).
+ */
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i, n;
+
+    //Get number from the keyboard and initialize i
+
+    std::cout << "Enter a number and press ENTER: ";
+    std::cin >> n;
+
+
+    for(i = n; i >= 1; i--)             //for i = n to 1  here we are saying start at n and go down to >= 1
+    {
+        std::cout << i << " ";          //print i
+    }
+
+    return 0;
+
+}
+
+
+/*
+Didier Hirwantwari
+ 6/30/2022
+ Print 1 to N using a for loop
+ Exercise 3.1.1 Chap 3
+ use the for statement in a program that prints all the numbers from
+ n1 to n2, where n1 and n2 are two numbers spceified by the user. (hint: You'll
+ need to prompt for the two values; then, inside the for statement, initiailize i to
+ n1, and use n2 in teh loop conditionn
+ */
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i, n1, n2;
+
+    //Get number from the keyboard and initialize i
+
+    std::cout << "Enter two numbers a and b (where a < b) and press ENTER: ";
+    std::cin >> n1 >> n2;
+
+
+    for(i = n1; i <= n2; i++)             //for i = 1 to n
+    {
+        std::cout << i << " ";          //print i
+    }
+
+    return 0;
+
+}
+
+
+
+
+
+
+
+/*
+Didier Hirwantwari
+ 6/30/2022
+ Prime Number checker with For Loop
+ .
+ */
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int n = 0;                                          //Number to test for prime-ness
+    bool is_prime = true;                               //Boolean flag: assume true
+                                                        //until proven otherwise
+
+    //Get a number from the keyboard.
+
+    std::cout << "Enter a number annd press ENTER: ";
+    std::cin >> n;
+
+    //Test ffor prime by checking for divisibility
+    //by all whole numbers from 2 to sqrt(n).
+
+    for(int i = 2; i <= sqrt(n); i++)
+    {
+        std::cout << "here is i " << i << std::endl;
+        std::cout << "here is sqrt(n): " << sqrt(n) << std::endl;
+        std::cout << "here is n % i: " << n % i << std::endl;
+        if (n % i == 0)
+            is_prime = false;
+    }
+
+    //print results
+    if(is_prime)
+        std::cout << "Number " << n << " is prime. " << endl;
+    else
+        std::cout << "Number " << n << " is not prime. " << endl;
+
+    return 0;
+
+
+}
+/*here are some results if enter the number 25
+Enter a number annd press ENTER: 25
+here is i 2
+here is sqrt(n): 5
+here is i 3
+here is sqrt(n): 5
+here is i 4
+here is sqrt(n): 5
+here is i 5
+here is sqrt(n): 5
+Number 25 is not prime.
+
+Process returned 0 (0x0)   execution time : 4.791 s
+Press any key to continue.
+
+*/
+
+//what if we enter the number  8
+/*
+
+
+
+
+
+*/
+
